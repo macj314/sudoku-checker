@@ -1,13 +1,13 @@
-import {Tile} from '../src/board.js';
+import {Board} from '../src/board.js';
 
 describe('Thing', () => {
-  var tile;
+  var baord;
 
   beforeEach(() => {
-    tile = new Tile(9);
+    board = new Board();
   });
 
-  test('should correctly create tile object and fill with a number', () => {
-    expect(tile.number).toEqual(9);
+  test('should correctly go through a board row and test if it has any duplicate numbers', () => {
+    expect(board.checkRow()).toEqual("row has no duplicates");
   });
 });
