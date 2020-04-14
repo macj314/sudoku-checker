@@ -42,14 +42,14 @@ Board.prototype.checkBoardRows = function(){
     [2, 8, 7, 4, 1, 9, 6, 3, 5],
     [3, 4, 5, 2, 8, 6, 1, 7, 9]
   ];
-  var compareArray = [];
-  for (var i = 0; i <= arrayRows.length; i++){
+  for (var i = 0; i < arrayRows.length; i++){
+    var compareArray = [];
     var innerArrayLength = arrayRows[i].length;
-    for (var j = 0; j <= innerArrayLength; j++){
+    for (var j = 0; j < innerArrayLength; j++) {
       if (compareArray[arrayRows[i][j]] === undefined){
         compareArray[arrayRows[i][j]] = 1;
       } else {
-        return "this row has duplicates:" + arrayRows[i][j];
+        return "this row has duplicates: " + arrayRows[i];
       }
     }
   }
