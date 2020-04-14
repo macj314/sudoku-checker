@@ -8,6 +8,6 @@ describe('Thing', () => {
   });
 
   test('should correctly create tile object and fill with a number', () => {
-    expect(triangle.number).toEqual(9)
+    expect(tile.number).toEqual(9);
   });
 });
