@@ -1,7 +1,7 @@
 import {Board} from '../src/board.js';
 
 describe('Thing', () => {
-  var baord;
+  var board;
 
   beforeEach(() => {
     board = new Board();

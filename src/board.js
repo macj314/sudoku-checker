@@ -30,7 +30,6 @@ export function Board(){
 
 Board.prototype.checkRow = function(){
   var row = [5, 3, 4, 6, 7, 8, 9, 1, 2];
-  // var column = [6, 7, 2, 1, 9, 5, 3, 4, 8];
   var compareArray = [];
   for (var i = 0; i <= row.length; i++){
     if (compareArray[row[i]] === undefined){
@@ -39,7 +38,20 @@ Board.prototype.checkRow = function(){
       return "row has duplicates";
     }
   }
-  return "row no duplicates";
+  return "row has no duplicates";
+}
+
+Board.prototype.checkColumn = function(){
+  var column = [6, 7, 2, 1, 9, 5, 3, 4, 8];
+  var compareArray = [];
+  for (var i = 0; i <= column.length; i++){
+    if (compareArray[column[i]] === undefined){
+      compareArray[column[i]] = 1;
+    } else {
+      return "column has duplicates";
+    }
+  }
+  return "column has no duplicates";
 }
 
 
