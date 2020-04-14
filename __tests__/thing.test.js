@@ -1,9 +1,13 @@
+import {Tile} from '../src/board.js';
+
 describe('Thing', () => {
-  let thing;
+  var tile;
 
   beforeEach(() => {
-    person = new Thing();
+    tile = new Tile(9);
   });
 
-  test('should ...', () => {});
+  test('should correctly create tile object and fill with a number', () => {
+    expect(triangle.number).toEqual(9)
+  });
 });
