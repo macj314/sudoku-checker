@@ -1,32 +1,7 @@
-export function Tile(){
-  this.number = number,
-  this.xCoordinate = 0,
-  this.yCoordinate = 0
-}
-
 export function Board(){
-  this.boardSpace = [],
-  this.tileCoordinates = 0
+  this.filledBoard = [];
 }
 
-
-//Attempt to populate board with predifined numbers.
-//Find a way to section off each row/column
-//Use the rows/columns in the jest test.
-
-// Board.prototype.fillBoard = function(){
-//   // var filledTiles = [];
-//   var tile = new Tile();
-//   var row = [];
-//   var column = [];
-//   for(x = 1; x <= 9; x++){
-//     tile.xCoordinate = x;
-//     for(y = 1; y <= 9; y++){
-//       tile.yCoordinate = y;
-//       this.boardSpace.push(tile);
-//     }
-//   }
-// }
 
 Board.prototype.checkRow = function(){
   var row = [5, 3, 4, 6, 7, 8, 9, 1, 2];
@@ -54,9 +29,18 @@ Board.prototype.checkColumn = function(){
   return "column has no duplicates";
 }
 
-
-// Tile.prototype.check = function(){
-//   if (this.number === null){
-//     return "empty tile"
-//   }
-// }
+//attempt to go through a multidimentional array
+Board.prototype.checkBoardRows = function(arrayRows){
+  var compareArray = [];
+  for (var i = 0; i <= arrayRows.length; i++){
+    var innerArrayLength = arrayRows.length;
+    for (var j = 0; j <= innerArrayLength.length; j++){
+      if (compareArray[arrayRows[i][j]] === undefined){
+        compareArray[arrayRows[i][j]] = 1;
+      } else {
+        return "this row has duplicates:" + arrayRows[i][j];
+      }
+    }
+    return "rows have no duplicates";
+  }
+}
